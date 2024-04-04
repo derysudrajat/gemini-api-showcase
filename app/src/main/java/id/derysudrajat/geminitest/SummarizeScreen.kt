@@ -33,6 +33,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import androidx.lifecycle.LifecycleCoroutineScope
 import dev.jeziellago.compose.markdowntext.MarkdownText
+import id.derysudrajat.geminitest.ui.component.ImageGif
 import id.derysudrajat.geminitest.ui.component.LoadingComponent
 import id.derysudrajat.geminitest.ui.component.PromptChat
 import id.derysudrajat.geminitest.ui.component.PromptInput
@@ -77,7 +78,11 @@ fun SummarizeScreen(
 
                     is SummarizeUiState.Success, SummarizeUiState.Loading -> {
                         Column(modifier = Modifier.padding(all = 8.dp)) {
-                            Image(
+                            if (uiState is SummarizeUiState.Loading) ImageGif(
+                                imageRes = R.drawable.anim_gemini,
+                                modifier = Modifier.size(24.dp)
+                            )
+                            else Image(
                                 modifier = Modifier.size(24.dp),
                                 painter = painterResource(id = R.drawable.ic_gemini),
                                 contentDescription = "Icon Gemini"

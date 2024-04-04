@@ -66,6 +66,7 @@ dependencies {
     implementation(libs.compose.markdown)
     implementation(libs.androidx.constraintlayout.compose)
     implementation(libs.coil)
+    implementation(libs.coil.gif)
     implementation(libs.compose.shimmer)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
